@@ -54,15 +54,15 @@
   </systemmodule>
 
   <autotools id="yasm">
-    <branch repo="yasm" module="yasm.git"/>
+    <branch repo="yasm" tag="v1.3.0"/>
   </autotools>
 
-  <autotools id="python" autogen_sh="git clean -dfx" autogenargs="CFLAGS=-fPIC">
-    <branch repo="python" module="cpython" revision="master"/>
+  <autotools id="python" autogenargs="CFLAGS=-fPIC --with-threads --enable-shared">
+    <branch repo="python" module="cpython" revision="master" checkoutdir="python"/>
   </autotools>
 
-  <autotools id="python2" autogen_sh="git clean -dfx" autogenargs="CFLAGS=-fPIC">
-    <branch repo="python" module="cpython" revision="2.7"/>
+  <autotools id="python2" autogenargs="CFLAGS=-fPIC --with-threads --enable-shared">
+    <branch repo="python" module="cpython" revision="2.7" checkoutdir="python2"/>
   </autotools>
 
   <autotools id="sqlite3">
