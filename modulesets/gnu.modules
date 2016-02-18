@@ -9,6 +9,8 @@
       href="http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/gnutls/"/>
   <repository type="tarball" name="gmplib.org"
       href="https://gmplib.org/download/gmp/"/>
+  <repository type="git" name="p11-glue"
+      href="git://anongit.freedesktop.org/p11-glue/"/>
 
   <autotools id="bison">
     <branch repo="ftp.gnu.org"
@@ -28,25 +30,40 @@
     </branch>
   </autotools>
 
+  <autotools id="libtasn1">
+    <branch repo="ftp.gnu.org"
+            module="libtasn1/libtasn1-4.7.tar.gz"
+            version="4.7"
+            size="1851611"
+            checkoutdir="libtasn1">
+    </branch>
+  </autotools>
+
+  <autotools id="p11-kit">
+    <branch repo="p11-glue" module="p11-kit"/>
+  </autotools>
+
   <autotools id="nettle" autogen-template="./configure --prefix=%(prefix)s --enable-static">
     <dependencies>
       <dep package="gmp"/>
     </dependencies>
     <branch repo="ftp.gnu.org"
-            module="nettle/nettle-2.7.1.tar.gz"
-            version="2.7.1"
-            size="1558863"
+            module="nettle/nettle-3.2.tar.gz"
+            version="3.2"
+            size="1879604"
             checkoutdir="nettle"/>
   </autotools>
 
   <autotools id="gnutls">
     <dependencies>
+      <dep package="libtasn1"/>
+      <dep package="p11-kit"/>
       <dep package="nettle"/>
     </dependencies>
     <branch repo="gnutls-mirror"
-            module="v3.3/gnutls-3.3.12.tar.xz"
-            version="3.3.12"
-            size="6185624"
+            module="v3.4/gnutls-3.4.9.tar.xz"
+            version="3.4.9"
+            size="6627640"
             checkoutdir="gnutls"/>
   </autotools>
 </moduleset>

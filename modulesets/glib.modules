@@ -5,31 +5,11 @@
 <moduleset>
   <include href="gnu.modules"/>
 
-  <repository type="git" name="git.gnome.org" href="git://git.gnome.org/"/>
   <repository type="system" name="system"/>
-  <repository type="tarball" name="github.gnome"
-      href="https://github.com/GNOME/"/>
-  <repository type="tarball" name="sourceware.org-mirror"
-      href="http://mirrors.kernel.org/sources.redhat.com/"/>
-
-  <autotools id="libffi" autogen-sh="configure">
-    <branch module="libffi/libffi-3.1.tar.gz" version="3.1"
-             repo="sourceware.org-mirror"
-             hash="sha256:97feeeadca5e21870fa4433bc953d1b3af3f698d5df8a428f68b73cd60aef6eb"
-             md5sum="f5898b29bbfd70502831a212d9249d10"/>
-  </autotools>
-
-  <autotools id="glib-networking" autogenargs="--without-ca-certificates">
-    <dependencies>
-      <dep package="glib"/>
-      <dep package="gnutls"/>
-    </dependencies>
-    <branch repo="github.gnome"
-            module="glib-networking/archive/2.43.1.tar.gz"
-            version="2.43.1"
-            size="186374"
-            checkoutdir="glib-networking"/>
-  </autotools>
+  <repository type="git" name="gnome" href="git://git.gnome.org/"/>
+  <repository type="git" name="libffi" href="git://github.com/atgreen/"/>
+  <repository type="tarball" name="libsoup"
+      href="https://github.com/GNOME/libsoup/archive/"/>
 
   <systemmodule id="zlib">
     <branch repo="system"/>
@@ -38,35 +18,77 @@
     </systemdependencies>
   </systemmodule>
 
+  <autotools id="libffi" autogen-sh="autogen.sh;./configure">
+    <branch repo="libffi" module="libffi"/>
+  </autotools>
+
   <autotools id="glib">
     <dependencies>
       <dep package="libffi"/>
       <dep package="zlib"/>
     </dependencies>
-    <branch repo="github.gnome"
-            module="glib/archive/2.43.90.tar.gz"
-            version="2.43.90"
-            size="7481630"
-            checkoutdir="glib"/>
+    <branch repo="gnome"/>
+  </autotools>
+
+  <autotools id="glib-networking" autogenargs="--without-ca-certifications">
+    <dependencies>
+      <dep package="glib"/>
+      <dep package="gnutls"/>
+    </dependencies>
+    <branch repo="gnome"/>
+  </autotools>
+
+  <autotools id="gobject-introspection">
+    <dependencies>
+      <dep package="glib"/>
+      <dep package="python2"/>
+    </dependencies>
+    <branch repo="gnome"/>
+  </autotools>
+
+  <autotools id="vala">
+    <dependencies>
+      <dep package="valac"/>
+    </dependencies>
+    <branch repo="gnome"/>
+  </autotools>
+
+  <autotools id="libsoup">
+    <dependencies>
+      <dep package="libxml2"/>
+      <dep package="sqlite3"/>
+      <dep package="glib-networking"/>
+      <dep package="gobject-introspection"/>
+      <dep package="vala"/>
+    </dependencies>
+    <branch repo="gnome"/>
+  </autotools>
+
+  <autotools id="pygobject">
+    <dependencies>
+      <dep package="python"/>
+      <dep package="gobject-introspection"/>
+    </dependencies>
+    <branch repo="gnome"/>
   </autotools>
 
   <autotools id="mm-common">
-    <branch repo="git.gnome.org"/>
+    <branch repo="gnome"/>
   </autotools>
 
   <autotools id="libsigc++2">
-    <branch repo="git.gnome.org" tag="2.2.11"/>
     <dependencies>
       <dep package="mm-common"/>
     </dependencies>
+    <branch repo="gnome"/>
   </autotools>
 
   <autotools id="glibmm" autogenargs="CXXFLAGS=-std=c++0x --disable-documentation">
-    <branch repo="git.gnome.org" tag="2.40.0"/>
     <dependencies>
       <dep package="glib"/>
       <dep package="libsigc++2"/>
     </dependencies>
+    <branch repo="gnome"/>
   </autotools>
 
 </moduleset>

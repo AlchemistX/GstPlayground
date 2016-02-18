@@ -4,6 +4,7 @@
 <?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
 <moduleset>
   <include href="glib.modules"/>
+  <include href="codec.modules"/>
   <include href="etc.modules"/>
 
   <repository type="git" name="gstreamer"
@@ -20,6 +21,7 @@
       <dep package="bison"/>
       <dep package="flex"/>
       <dep package="glib"/>
+      <dep package="gobject-introspection"/>
     </dependencies>
     <branch repo="gstreamer" module="gstreamer" checkoutdir="gstreamer" />
   </autotools>
@@ -99,6 +101,31 @@
     <branch repo="slomo" module="gst-player" checkoutdir="gst-player"/>
   </autotools>
 
+  <autotools id="gst-python" autogenargs="--disable-gtk-doc">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+      <dep package="gst-plugins-good"/>
+      <dep package="gst-plugins-bad"/>
+      <dep package="gst-plugins-ugly"/>
+      <dep package="gst-libav"/>
+      <dep package="pygobject"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-python" checkoutdir="gst-python"/>
+  </autotools>
+
+  <autotools id="gst-rtsp-server" autogenargs="--disable-gtk-doc">
+    <dependencies>
+      <dep package="gstreamer"/>
+      <dep package="gst-plugins-base"/>
+      <dep package="gst-plugins-good"/>
+      <dep package="gst-plugins-bad"/>
+      <dep package="gst-plugins-ugly"/>
+      <dep package="gst-libav"/>
+    </dependencies>
+    <branch repo="gstreamer" module="gst-rtsp-server" checkoutdir="gst-rtsp-server"/>
+  </autotools>
+
   <metamodule id="gst">
     <dependencies>
       <dep package="gstreamer"/>
@@ -109,6 +136,8 @@
       <dep package="gst-libav"/>
       <dep package="gst-devtools"/>
       <dep package="gst-player"/>
+      <dep package="gst-python"/>
+      <dep package="gst-rtsp-server"/>
     </dependencies>
   </metamodule>
 
