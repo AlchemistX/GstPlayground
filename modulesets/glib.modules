@@ -41,7 +41,7 @@
   <autotools id="gobject-introspection">
     <dependencies>
       <dep package="glib"/>
-      <dep package="python2"/>
+      <dep package="python"/>
     </dependencies>
     <branch repo="gnome"/>
   </autotools>
