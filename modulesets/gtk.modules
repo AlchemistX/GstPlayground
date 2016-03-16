@@ -1,0 +1,80 @@
+<?xml version="1.0" standalone="no"?> <!--*- mode: nxml -*-->
+
+<!DOCTYPE moduleset SYSTEM "moduleset.dtd">
+<?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
+<moduleset>
+  <include href="gnu.modules"/>
+
+  <repository type="system" name="system"/>
+  <repository type="git" name="gnome" href="git://git.gnome.org/"/>
+  <repository type="git" name="freedesktop"
+              href="git://anongit.freedesktop.org/git/"/>
+  <repository type="git" name="libepoxy"
+              href="git@github.com:anholt/"/>
+
+  <autotools id="pixman">
+    <branch repo="freedesktop"/>
+  </autotools>
+
+  <autotools id="cairo">
+    <branch repo="freedesktop"/>
+  </autotools>
+
+  <autotools id="libepoxy">
+    <branch repo="libepoxy"/>
+  </autotools>
+
+  <autotools id="atk">
+    <branch repo="gnome" revision="gnome-3-18"/>
+    <dependencies>
+      <dep package="glib"/>
+      <dep package="gobject-introspection"/>
+      <dep package="gtk-doc"/>
+    </dependencies>
+  </autotools>
+
+  <autotools id="pango">
+    <branch repo="gnome"/>
+  </autotools>
+
+  <autotools id="gtk+" autogenargs="--enable-broadway-backend --enable-installed-tests">
+    <branch repo="gnome"/>
+    <if condition-set="x11">
+      <autogenargs value="--enable-x11-backend"/>
+    </if>
+    <if condition-set="wayland">
+      <autogenargs value="--enable-wayland-backend"/>
+    </if>
+    <if condition-set="mir">
+      <autogenargs value="--enable-mir-backend"/>
+    </if>
+    <if condition-set="quartz">
+      <autogenargs value="--enable-quartz-backend"/>
+    </if>
+    <branch/>
+    <dependencies>
+      <dep package="atk"/>
+      <dep package="glib"/>
+      <dep package="cairo"/>
+      <dep package="pango"/>
+      <dep package="gdk-pixbuf"/>
+      <dep package="gtk-doc"/>
+      <dep package="gobject-introspection"/>
+      <dep package="libepoxy"/>
+      <if condition-unset="quartz">
+        <dep package="at-spi2-atk"/>
+      </if>
+      <if condition-set="wayland">
+        <dep package="libxkbcommon"/>
+        <dep package="wayland"/>
+        <dep package="wayland-egl"/>
+      </if>
+      <if condition-set="mir">
+        <dep package="mir"/>
+      </if>
+    </dependencies>
+    <suggests>
+      <dep package="shared-mime-info"/>
+    </suggests>
+  </autotools>
+</moduleset>

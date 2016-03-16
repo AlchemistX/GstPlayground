@@ -58,7 +58,7 @@
   </autotools>
 
   <autotools id="python" autogenargs="CFLAGS=-fPIC --with-threads --enable-shared">
-    <branch repo="python" module="cpython" revision="master" checkoutdir="python"/>
+    <branch repo="python" module="cpython" revision="3.4" checkoutdir="python"/>
   </autotools>
 
   <autotools id="sqlite3">

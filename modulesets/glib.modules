@@ -72,6 +72,43 @@
     <branch repo="gnome"/>
   </autotools>
 
+  <autotools id="gssdp">
+    <dependencies>
+      <dep package="gobject-introspection"/>
+    </dependencies>
+    <branch repo="gnome"/>
+  </autotools>
+
+  <autotools id="gupnp">
+    <dependencies>
+      <dep package="gssdp"/>
+    </dependencies>
+    <branch repo="gnome"/>
+  </autotools>
+
+  <autotools id="gupnp-av">
+    <dependencies>
+      <dep package="gupnp"/>
+    </dependencies>
+    <branch repo="gnome"/>
+  </autotools>
+
+  <autotools id="gupnp-tools">
+    <dependencies>
+      <dep package="gupnp"/>
+    </dependencies>
+    <branch repo="gnome"/>
+  </autotools>
+
+  <autotools id="gupnp-dlna">
+    <dependencies>
+      <dep package="gupnp"/>
+      <dep package="gupnp-av"/>
+      <dep package="gupnp-tools"/>
+    </dependencies>
+    <branch repo="gnome"/>
+  </autotools>
+
   <autotools id="mm-common">
     <branch repo="gnome"/>
   </autotools>

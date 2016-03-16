@@ -4,6 +4,7 @@
 <?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
 <moduleset>
   <include href="glib.modules"/>
+  <include href="gtk.modules"/>
   <include href="codec.modules"/>
   <include href="etc.modules"/>
 
@@ -139,6 +140,7 @@
       <dep package="gst-player"/>
       <dep package="gst-python"/>
       <dep package="gst-rtsp-server"/>
+      <dep package="gupnp-dlna"/>
     </dependencies>
   </metamodule>
 
