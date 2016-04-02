@@ -5,8 +5,8 @@
 <moduleset>
   <repository type="system" name="system"/>
   <repository type="tarball" name="sqlite" href="http://www.sqlite.org/"/>
-  <repository type="git" name="yasm" href="git@github.com:yasm/"/>
-  <repository type="git" name="python" href="git@github.com:python/"/>
+  <repository type="git" name="yasm" href="https://github.com/yasm/"/>
+  <repository type="git" name="python" href="https://github.com/python/"/>
 
   <systemmodule id="libasound">
     <branch repo="system"/>

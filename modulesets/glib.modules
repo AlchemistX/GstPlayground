@@ -109,6 +109,18 @@
     <branch repo="gnome"/>
   </autotools>
 
+  <autotools id="cogl">
+    <branch repo="gnome" revision="cogl-1.22"/>
+  </autotools>
+
+  <autotools id="clutter">
+    <dependencies>
+      <dep package="cogl"/>
+      <dep package="cogl-path"/>
+    </dependencies>
+    <branch repo="gnome"/>
+  </autotools>
+
   <autotools id="mm-common">
     <branch repo="gnome"/>
   </autotools>
