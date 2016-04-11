@@ -140,7 +140,6 @@
       <dep package="gst-player"/>
       <dep package="gst-python"/>
       <dep package="gst-rtsp-server"/>
-      <dep package="gupnp-dlna"/>
     </dependencies>
   </metamodule>
 
