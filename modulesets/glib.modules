@@ -4,6 +4,7 @@
 <?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
 <moduleset>
   <include href="gnu.modules"/>
+  <include href="gtk.modules"/>
 
   <repository type="system" name="system"/>
   <repository type="git" name="gnome" href="git://git.gnome.org/"/>
@@ -66,6 +67,9 @@
 
   <autotools id="pygobject">
     <dependencies>
+      <dep package="pixman"/>
+      <dep package="cairo"/>
+      <dep package="pycairo"/>
       <dep package="python"/>
       <dep package="gobject-introspection"/>
     </dependencies>

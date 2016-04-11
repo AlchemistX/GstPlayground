@@ -11,6 +11,8 @@
               href="git://anongit.freedesktop.org/git/"/>
   <repository type="git" name="libepoxy"
               href="https://github.com/anholt/"/>
+  <repository type="git" name="cairographics"
+              href="git://git.cairographics.org/git/"/>
 
   <autotools id="pixman">
     <branch repo="freedesktop"/>
@@ -19,6 +21,10 @@
   <autotools id="cairo">
     <branch repo="freedesktop"/>
   </autotools>
+
+  <waf id="pycairo" python-command="python3">
+    <branch repo="cairographics"/>
+  </waf>
 
   <autotools id="libepoxy">
     <branch repo="libepoxy"/>

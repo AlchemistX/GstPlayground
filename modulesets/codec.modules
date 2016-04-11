@@ -48,10 +48,10 @@
 
   <autotools id="x264"
              autogen-template="./configure --prefix=%(prefix)s --enable-shared --disable-cli">
-    <branch repo="videolan" module="x264.git" tag="c8a773e" checkoutdir="x264"/>
     <dependencies>
       <dep package="yasm"/>
     </dependencies>
+    <branch repo="videolan" module="x264.git" tag="c8a773e" checkoutdir="x264"/>
   </autotools>
 
   <autotools id="lame">
@@ -62,6 +62,9 @@
   </autotools>
 
   <autotools id="libjpeg">
+    <dependencies>
+      <dep package="yasm"/>
+    </dependencies>
     <branch repo="downloads.sourceforge.net"
             module="libjpeg-turbo/libjpeg-turbo-1.4.1.tar.gz"
             version="1.4.1"
