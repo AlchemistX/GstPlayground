@@ -54,7 +54,7 @@
   </systemmodule>
 
   <autotools id="yasm" autogenargs="PYTHON=python">
-    <branch repo="yasm" tag="v1.3.0"/>
+    <branch repo="yasm" tag="v1.2.0"/>
   </autotools>
 
   <autotools id="python" autogenargs="CFLAGS=-fPIC --with-threads --enable-shared">
