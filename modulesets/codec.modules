@@ -61,7 +61,7 @@
             />
   </autotools>
 
-  <autotools id="libjpeg" autogenargs="--without-simd">
+  <autotools id="libjpeg">
     <dependencies>
       <dep package="yasm"/>
     </dependencies>
