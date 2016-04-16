@@ -67,8 +67,6 @@
 
   <autotools id="pygobject">
     <dependencies>
-      <dep package="pixman"/>
-      <dep package="cairo"/>
       <dep package="pycairo"/>
       <dep package="python"/>
       <dep package="gobject-introspection"/>
