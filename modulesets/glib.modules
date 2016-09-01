@@ -36,7 +36,7 @@
       <dep package="glib"/>
       <dep package="gnutls"/>
     </dependencies>
-    <branch repo="gnome"/>
+    <branch repo="gnome" revision="2.48.2"/>
   </autotools>
 
   <autotools id="gobject-introspection">

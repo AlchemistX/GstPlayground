@@ -7,6 +7,8 @@
       href="http://downloads.xiph.org/releases/"/>
   <repository type="git" name="videolan"
       href="git://git.videolan.org/"/>
+  <repository type="git" name="vpx"
+      href="https://chromium.googlesource.com/webm"/>
   <repository type="tarball" name="downloads.sourceforge.net"
       href="http://downloads.sourceforge.net/"/>
   <repository type="tarball" name="webm.googlecode.com"
@@ -83,10 +85,6 @@
     <dependencies>
       <dep package="yasm"/>
     </dependencies>
-    <branch repo="webm.googlecode.com"
-            module="libvpx-v1.3.0.tar.bz2"
-            version="1.3.0"
-            size="2084229"
-            checkoutdir="libvpx"/>
+    <branch repo="vpx" revision="v1.3.0"/>
   </autotools>
 </moduleset>
