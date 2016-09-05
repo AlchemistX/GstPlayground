@@ -42,7 +42,6 @@
   <autotools id="gobject-introspection">
     <dependencies>
       <dep package="glib"/>
-      <dep package="python"/>
     </dependencies>
     <branch repo="gnome" revision="1.48.0"/>
   </autotools>
@@ -68,7 +67,6 @@
   <autotools id="pygobject">
     <dependencies>
       <dep package="pycairo"/>
-      <dep package="python"/>
       <dep package="gobject-introspection"/>
     </dependencies>
     <branch repo="gnome" revision="3.20.0"/>

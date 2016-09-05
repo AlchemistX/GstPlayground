@@ -40,7 +40,7 @@
   </autotools>
 
   <autotools id="p11-kit">
-    <branch repo="p11-glue" module="p11-kit"/>
+    <branch repo="p11-glue" module="p11-kit" tag="fb73b3a"/>
   </autotools>
 
   <autotools id="nettle" autogen-template="./configure --prefix=%(prefix)s --enable-static">
