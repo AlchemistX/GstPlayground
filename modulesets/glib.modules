@@ -28,7 +28,7 @@
       <dep package="libffi"/>
       <dep package="zlib"/>
     </dependencies>
-    <branch repo="gnome"/>
+    <branch repo="gnome" revision="2.48.0"/>
   </autotools>
 
   <autotools id="glib-networking" autogenargs="--without-ca-certifications">
@@ -36,7 +36,7 @@
       <dep package="glib"/>
       <dep package="gnutls"/>
     </dependencies>
-    <branch repo="gnome" revision="2.48.2"/>
+    <branch repo="gnome" revision="2.48.0"/>
   </autotools>
 
   <autotools id="gobject-introspection">
@@ -44,7 +44,7 @@
       <dep package="glib"/>
       <dep package="python"/>
     </dependencies>
-    <branch repo="gnome"/>
+    <branch repo="gnome" revision="1.48.0"/>
   </autotools>
 
   <autotools id="vala">
@@ -62,7 +62,7 @@
       <dep package="gobject-introspection"/>
       <dep package="vala"/>
     </dependencies>
-    <branch repo="gnome"/>
+    <branch repo="gnome" revision="2.54.0"/>
   </autotools>
 
   <autotools id="pygobject">
@@ -71,7 +71,7 @@
       <dep package="python"/>
       <dep package="gobject-introspection"/>
     </dependencies>
-    <branch repo="gnome"/>
+    <branch repo="gnome" revision="3.20.0"/>
   </autotools>
 
   <autotools id="gssdp">

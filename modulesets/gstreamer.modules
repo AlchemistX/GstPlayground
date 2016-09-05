@@ -25,7 +25,7 @@
       <dep package="libsoup"/>
       <dep package="pygobject"/>
     </dependencies>
-    <branch repo="gstreamer" module="gstreamer"/>
+    <branch repo="gstreamer" module="gstreamer" revision="1.8.0"/>
   </autotools>
 
   <autotools id="gst-plugins-base" autogenargs="--disable-gtk-doc">
@@ -38,7 +38,7 @@
       <dep package="libxv"/>
       <dep package="gstreamer"/>
     </dependencies>
-    <branch repo="gstreamer" module="gst-plugins-base"/>
+    <branch repo="gstreamer" module="gst-plugins-base" revision="1.8.0"/>
   </autotools>
 
   <autotools id="gst-plugins-good" autogenargs="--disable-gtk-doc">
@@ -49,7 +49,7 @@
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
     </dependencies>
-    <branch repo="gstreamer" module="gst-plugins-good"/>
+    <branch repo="gstreamer" module="gst-plugins-good" revision="1.8.0"/>
   </autotools>
 
   <autotools id="gst-plugins-bad" autogenargs="--disable-gtk-doc">
@@ -58,7 +58,7 @@
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
     </dependencies>
-    <branch repo="gstreamer" module="gst-plugins-bad"/>
+    <branch repo="gstreamer" module="gst-plugins-bad" revision="1.8.0"/>
   </autotools>
 
   <autotools id="gst-plugins-ugly" autogenargs="--disable-gtk-doc">
@@ -68,7 +68,7 @@
       <dep package="x264"/>
       <dep package="lame"/>
     </dependencies>
-    <branch repo="gstreamer" module="gst-plugins-ugly"/>
+    <branch repo="gstreamer" module="gst-plugins-ugly" revision="1.8.0"/>
   </autotools>
 
   <autotools id="gst-libav" autogenargs="--disable-gtk-doc">
@@ -76,7 +76,7 @@
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
     </dependencies>
-    <branch repo="gstreamer" module="gst-libav"/>
+    <branch repo="gstreamer" module="gst-libav" revision="1.8.0"/>
   </autotools>
 
   <autotools id="gst-devtools" autogenargs="--disable-gtk-doc --disable-introspection">
@@ -88,7 +88,7 @@
       <dep package="gst-plugins-ugly"/>
       <dep package="gst-libav"/>
     </dependencies>
-    <branch repo="gstreamer" module="gst-devtools" subdir="validate"/>
+    <branch repo="gstreamer" module="gst-devtools" subdir="validate" revision="1.8.0"/>
   </autotools>
 
   <autotools id="gst-python" autogenargs="--disable-gtk-doc">
@@ -101,7 +101,7 @@
       <dep package="gst-libav"/>
       <dep package="pygobject"/>
     </dependencies>
-    <branch repo="gstreamer" module="gst-python"/>
+    <branch repo="gstreamer" module="gst-python" revision="1.8.0"/>
   </autotools>
 
   <autotools id="gst-rtsp-server" autogenargs="--disable-gtk-doc">
@@ -113,7 +113,7 @@
       <dep package="gst-plugins-ugly"/>
       <dep package="gst-libav"/>
     </dependencies>
-    <branch repo="gstreamer" module="gst-rtsp-server"/>
+    <branch repo="gstreamer" module="gst-rtsp-server" revision="1.8.0"/>
   </autotools>
 
   <metamodule id="gst">
