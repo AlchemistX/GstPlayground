@@ -12,7 +12,6 @@ build_policy = 'updated-deps'
 os.environ['LDFLAGS'] = '-Wl,-rpath,' + os.path.join(prefix, 'lib') \
                         + ' -Wl,-rpath,' + os.path.join(prefix, 'lib64') \
                         + os.environ.get('LDFLAGS', '')
-os.environ['PYTHON'] = 'python3'
 
 addpath('PKG_CONFIG_PATH', os.path.join(prefix, 'lib/pkgconfig'))
 addpath('PKG_CONFIG_PATH', os.path.join(prefix, 'lib64/pkgconfig'))
