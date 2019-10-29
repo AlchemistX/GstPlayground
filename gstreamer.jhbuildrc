@@ -4,11 +4,23 @@ moduleset = [os.path.join(_basepath, 'modulesets/buildtools.modules'), os.path.j
 
 modules = ['buildtools', 'gst']
 
+#xdg_cache_home = os.environ.get('XDG_CACHE_HOME',
+#                                os.path.join(os.path.expanduser('~'),
+#                                             '.cache'))
+#tarballdir = os.path.join(xdg_cache_home, 'jhbuild', 'downloads')
+
+#buildroot = os.path.join(xdg_cache_home, 'jhbuild', 'build')
+
+#print(xdg_cache_home)
+#print(tarballdir)
+#print(buildroot)
+
 checkoutroot = os.path.join(_basepath, 'build')
+buildroot = checkoutroot
 prefix = os.path.join(_basepath, 'install')
 
 build_policy = 'updated-deps'
-
+os.environ['GST_VERSION'] = '1.9.1'
 os.environ['LDFLAGS'] = '-Wl,-rpath,' + os.path.join(prefix, 'lib') \
                         + ' -Wl,-rpath,' + os.path.join(prefix, 'lib64') \
                         + os.environ.get('LDFLAGS', '')

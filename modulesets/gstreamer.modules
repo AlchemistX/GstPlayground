@@ -30,31 +30,21 @@
 
   <autotools id="gst-plugins-base" autogenargs="--disable-gtk-doc">
     <dependencies>
-      <dep package="orc"/>
-      <dep package="libasound"/>
-      <dep package="libogg"/>
-      <dep package="libtheora"/>
-      <dep package="libvorbis"/>
-      <dep package="libxv"/>
       <dep package="gstreamer"/>
     </dependencies>
     <branch repo="gstreamer" module="gst-plugins-base" revision="1.8.0"/>
   </autotools>
 
-  <autotools id="gst-plugins-good" autogenargs="--disable-gtk-doc">
+  <autotools id="gst-plugins-good" autogenargs="--disable-gtk-doc --disable-pulse">
     <dependencies>
-      <dep package="libjpeg"/>
-      <dep package="libsoup"/>
-      <dep package="libvpx"/>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
     </dependencies>
     <branch repo="gstreamer" module="gst-plugins-good" revision="1.8.0"/>
   </autotools>
 
-  <autotools id="gst-plugins-bad" autogenargs="--disable-gtk-doc">
+  <autotools id="gst-plugins-bad" autogenargs="--disable-gtk-doc --disable-opencv --disable-gtk3">
     <dependencies>
-      <dep package="faad"/>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
     </dependencies>
@@ -65,8 +55,6 @@
     <dependencies>
       <dep package="gstreamer"/>
       <dep package="gst-plugins-base"/>
-      <dep package="x264"/>
-      <dep package="lame"/>
     </dependencies>
     <branch repo="gstreamer" module="gst-plugins-ugly" revision="1.8.0"/>
   </autotools>
@@ -99,7 +87,6 @@
       <dep package="gst-plugins-bad"/>
       <dep package="gst-plugins-ugly"/>
       <dep package="gst-libav"/>
-      <dep package="pygobject"/>
     </dependencies>
     <branch repo="gstreamer" module="gst-python" revision="1.8.0"/>
   </autotools>

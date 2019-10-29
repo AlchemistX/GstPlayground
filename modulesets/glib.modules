@@ -31,7 +31,7 @@
     <branch repo="gnome" revision="2.48.0"/>
   </autotools>
 
-  <autotools id="glib-networking" autogenargs="--without-ca-certifications">
+  <autotools id="glib-networking" autogenargs="--without-ca-certificates">
     <dependencies>
       <dep package="glib"/>
       <dep package="gnutls"/>
@@ -45,6 +45,13 @@
     </dependencies>
     <branch repo="gnome" revision="1.48.0"/>
   </autotools>
+
+  <systemmodule id="gobject-introspection">
+    <branch repo="system"/>
+    <systemdependencies>
+      <dep type="path" name="g-ir-scanner"/>
+    </systemdependencies>
+  </systemmodule>
 
   <autotools id="vala">
     <dependencies>
